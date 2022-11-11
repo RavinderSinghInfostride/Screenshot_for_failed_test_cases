@@ -7,4 +7,11 @@
             <class name="Test.ToVerifyUserIsAbleToLogin"/>
         </classes>
     </test>
+
+    <test name="Verify user is navigated to admin page">
+        <parameter name="testRunId2" value="TCTC-2"/>
+        <classes>
+            <class name="Test.ToVerifyUserIsRedirectedToAdminPage"/>
+        </classes>
+    </test>
 </suite>

@@ -14,6 +14,5 @@ public class ToVerifyUserIsAbleToLogin extends BaseClass {
         String text = driver.findElement(verify).getText();
         System.out.println(text);
         Assert.assertEquals(text, "Dashboar");
-//        takeSnapShot("C:\\Users\\RavinderSingh\\IdeaProjects\\Screenshot\\Screenshots\\test.png");
     }
 }

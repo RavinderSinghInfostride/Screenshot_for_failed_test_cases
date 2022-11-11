@@ -9,14 +9,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
+
 import java.io.File;
 
 public class BaseClass {
     public WebDriver driver;
     protected PageFactory pageFactory;
 
-    @BeforeSuite
+    @BeforeClass
     public void setup() {
         ChromeOptions chromeOptions = new ChromeOptions();
         WebDriverManager.chromedriver().setup();
@@ -25,13 +26,6 @@ public class BaseClass {
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         pageFactory = new PageFactory(driver);
     }
-
-//    public void takeSnapShot(String fileWithPath) throws Exception {
-//        TakesScreenshot scrShot = ((TakesScreenshot) driver);
-//        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-//        File DestFile = new File(fileWithPath);
-//        FileUtils.copyFile(SrcFile, DestFile);
-//    }
 
     @AfterMethod
     public void screenShot(ITestResult result) {
